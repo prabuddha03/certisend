@@ -1,0 +1,32 @@
+.switch {
+    @apply relative inline-flex h-6 w-11 cursor-pointer rounded-full border-2 border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-zinc-600 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .switch[data-state='checked'] {
+    @apply bg-green-500;
+  }
+  
+  .switch[data-state='unchecked'] {
+    @apply bg-zinc-700;
+  }
+  
+  .switch-root {
+    @apply relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent 
+      transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 
+      focus-visible:ring-primary focus-visible:ring-opacity-75
+      bg-zinc-700 data-[state=checked]:bg-green-600;
+  }
+  
+  .switch-thumb {
+    @apply pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg 
+      ring-0 transition duration-200 ease-in-out translate-x-0 
+      data-[state=checked]:translate-x-5;
+  }
+  
+  .switch[data-state='checked'] .switch-thumb {
+    @apply translate-x-5 ;
+  }
+  
+  .switch[data-state='unchecked'] .switch-thumb {
+    @apply translate-x-0;
+  }
